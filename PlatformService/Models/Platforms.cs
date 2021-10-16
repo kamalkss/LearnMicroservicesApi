@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LearnMicroservices.Models
+namespace PlatformService.Models
 {
     public class Platforms
     {

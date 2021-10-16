@@ -1,7 +1,7 @@
-﻿using LearnMicroservices.Models;
+﻿using PlatformService.Models;
 using Microsoft.AspNetCore.Builder;
 
-namespace LearnMicroservices.Data
+namespace PlatformService.Data
 {
     public static class PrepDb
     {

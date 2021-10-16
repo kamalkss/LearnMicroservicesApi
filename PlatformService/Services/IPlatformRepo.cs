@@ -1,6 +1,6 @@
-﻿using LearnMicroservices.Models;
+﻿using PlatformService.Models;
 
-namespace LearnMicroservices.Services
+namespace PlatformService.Services
 {
     public interface IPlatformRepo
     {

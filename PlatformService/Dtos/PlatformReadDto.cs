@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LearnMicroservices.Dtos
+namespace PlatformService.Dtos
 {
     public class PlatformReadDto
     {

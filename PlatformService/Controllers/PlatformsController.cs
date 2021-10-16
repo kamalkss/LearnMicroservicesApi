@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using LearnMicroservices.Dtos;
-using LearnMicroservices.Models;
-using LearnMicroservices.Services;
+using PlatformService.Dtos;
+using PlatformService.Models;
+using PlatformService.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LearnMicroservices.Controllers
+namespace PlatformService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -29,7 +29,7 @@ namespace LearnMicroservices.Controllers
             return Ok(_mapper.Map<IEnumerable<PlatformReadDto>>(PlatformItem));
         }
         
-        [HttpGet("{id}",Name ="GetPlaformById")]
+        [HttpGet("{id}",Name = "GetPlatformById")]
         public ActionResult<PlatformReadDto> GetPlatformById(Guid Id)
         {
             Console.WriteLine("--> Platform Id");

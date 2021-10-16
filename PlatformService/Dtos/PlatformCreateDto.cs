@@ -1,4 +1,4 @@
-﻿namespace LearnMicroservices.Dtos
+﻿namespace PlatformService.Dtos
 {
     public class PlatformCreateDto
     {

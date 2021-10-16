@@ -1,5 +1,5 @@
-using LearnMicroservices.Data;
-using LearnMicroservices.Services;
+using PlatformService.Data;
+using PlatformService.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -13,7 +13,7 @@ builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new() { Title = "LearnMicroservices", Version = "v1" });
+    c.SwaggerDoc("v1", new() { Title = "PlatformService", Version = "v1" });
 });
 
 var app = builder.Build();
@@ -22,7 +22,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "LearnMicroservices v1"));
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PlatformService v1"));
 }
 
 app.UseHttpsRedirection();

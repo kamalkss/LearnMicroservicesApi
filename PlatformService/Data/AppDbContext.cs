@@ -1,7 +1,7 @@
-﻿using LearnMicroservices.Models;
+﻿using PlatformService.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace LearnMicroservices.Data
+namespace PlatformService.Data
 {
     public class AppDbContext : DbContext
     {

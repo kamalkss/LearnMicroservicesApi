@@ -1,7 +1,7 @@
-﻿using LearnMicroservices.Data;
-using LearnMicroservices.Models;
+﻿using PlatformService.Data;
+using PlatformService.Models;
 
-namespace LearnMicroservices.Services
+namespace PlatformService.Services
 {
     public class PlatformRepo : IPlatformRepo
     {
