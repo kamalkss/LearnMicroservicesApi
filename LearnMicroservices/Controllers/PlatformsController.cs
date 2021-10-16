@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using LearnMicroservices.Dtos;
+using LearnMicroservices.Models;
 using LearnMicroservices.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,7 +29,7 @@ namespace LearnMicroservices.Controllers
             return Ok(_mapper.Map<IEnumerable<PlatformReadDto>>(PlatformItem));
         }
         
-        [HttpGet]
+        [HttpGet("{id}",Name ="GetPlaformById")]
         public ActionResult<PlatformReadDto> GetPlatformById(Guid Id)
         {
             Console.WriteLine("--> Platform Id");
@@ -40,6 +41,16 @@ namespace LearnMicroservices.Controllers
 
             return NotFound();
 
+        }
+        [HttpPost]
+        public ActionResult<PlatformReadDto> CreatePlatform(PlatformCreateDto platformCreateDto)
+        {
+            Console.WriteLine("Creating Platform");
+            var PlatformItem = _mapper.Map<Platforms>(platformCreateDto);
+            _Repository.CreatePlatform(PlatformItem);
+            _Repository.SaveChanges();
+            var platformReadDto =  _mapper.Map<PlatformReadDto>(PlatformItem);
+            return CreatedAtRoute(nameof(GetPlatformById), new { id = platformReadDto.PlatformId }, platformReadDto);
         }
     }
 }
