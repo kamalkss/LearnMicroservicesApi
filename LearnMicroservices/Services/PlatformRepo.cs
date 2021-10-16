@@ -19,8 +19,11 @@ namespace LearnMicroservices.Services
         {
             if(platforms == null)
             {
-                return null;
+                throw new ArgumentNullException(nameof(platforms));
             }
+            _context.Platforms.Add(platforms);
+            SaveChanges();
+
         }
 
         public IEnumerable<Platforms> GetAllPlatforms()
