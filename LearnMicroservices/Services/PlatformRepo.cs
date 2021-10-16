@@ -6,13 +6,13 @@ namespace LearnMicroservices.Services
     public class PlatformRepo : IPlatformRepo
     {
 
-        private readonly ILogger _logger;
+       
         private readonly AppDbContext _context;
 
-        public PlatformRepo(ILogger logger, AppDbContext context)
+        public PlatformRepo(AppDbContext context)
         {
             _context = context;
-            _logger = logger;
+            
         }
 
         public void CreatePlatform(Platforms platforms)
